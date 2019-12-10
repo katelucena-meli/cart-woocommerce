@@ -31,3 +31,4 @@ deploy:
       all_branches: true
       condition: $TRAVIS_BRANCH =~ ^release\/.*$
     draft: true
+
