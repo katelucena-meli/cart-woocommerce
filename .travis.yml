@@ -5,7 +5,8 @@ branches:
 script:
   - echo $TRAVIS_BRANCH
 before_deploy:
-  - echo ${TRAVIS_BRANCH}
+  - echo $TRAVIS_BRANCH
+  - echo $TRAVIS_BUILD_NUMBER
   - tar -cvz \
       --exclude=bin \
       --exclude=tests \
@@ -17,7 +18,8 @@ before_deploy:
       --exclude=phpunit.xml.dist \
       --exclude=README.md \
       --exclude=readme.txt \
-      -f ${TRAVIS_BRANCH}-${TRAVIS_BUILD_NUMBER}.tar.gz *
+      -f ${TRAVIS_BRANCH}-${TRAVIS_BUILD_NUMBER}.tar.gz \
+      *
 deploy:
   - provider: releases
     draft: true
