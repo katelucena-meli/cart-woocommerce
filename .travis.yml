@@ -8,17 +8,17 @@ before_deploy:
   - echo $TRAVIS_BRANCH
   - echo $TRAVIS_BUILD_NUMBER
   - echo "export FINAL_NAME=$(echo $TRAVIS_BRANCH | sed -e 's/release\///g')" > name.sh
-  - tar -cvz \
-      --exclude=bin \
-      --exclude=tests \
-      --exclude=editorconfig \
-      --exclude=.gitignore \
-      --exclude=.travis.yml \
-      --exclude=changelog.log \
-      --exclude=CHANGELOG.md \
-      --exclude=phpunit.xml.dist \
-      --exclude=README.md \
-      --exclude=readme.txt \
+  - tar -cvz
+      --exclude=bin
+      --exclude=tests
+      --exclude=editorconfig
+      --exclude=.gitignore
+      --exclude=.travis.yml
+      --exclude=changelog.log
+      --exclude=CHANGELOG.md
+      --exclude=phpunit.xml.dist
+      --exclude=README.md
+      --exclude=readme.txt
       -f ${FINAL_NAME}-${TRAVIS_BUILD_NUMBER}.tar.gz *
 deploy:
   - provider: releases
