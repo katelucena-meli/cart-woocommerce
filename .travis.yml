@@ -5,18 +5,19 @@ branches:
 script:
   - echo $TRAVIS_BRANCH
 before_deploy:
-- tar -cvz \
-    --exclude=bin \
-    --exclude=tests \
-    --exclude=editorconfig \
-    --exclude=.gitignore \
-    --exclude=.travis.yml \
-    --exclude=changelog.log \
-    --exclude=CHANGELOG.md \
-    --exclude=phpunit.xml.dist \
-    --exclude=README.md \
-    --exclude=readme.txt \
-    -f ${REPO}-${$TRAVIS_BRANCH}-${TRAVIS_BUILD_NUMBER}.tar.gz *
+  - echo ${TRAVIS_BRANCH}
+  - tar -cvz \
+      --exclude=bin \
+      --exclude=tests \
+      --exclude=editorconfig \
+      --exclude=.gitignore \
+      --exclude=.travis.yml \
+      --exclude=changelog.log \
+      --exclude=CHANGELOG.md \
+      --exclude=phpunit.xml.dist \
+      --exclude=README.md \
+      --exclude=readme.txt \
+      -f ${REPO}-${$TRAVIS_BRANCH}-${TRAVIS_BUILD_NUMBER}.tar.gz *
 deploy:
   - provider: releases
     draft: true
@@ -25,5 +26,6 @@ deploy:
     file: ${REPO}-${$TRAVIS_BRANCH}-${TRAVIS_BUILD_NUMBER}.tar.gz
     on:
       repo: PluginAndPartners/cart-woocommerce
-      all_branches: true
-      condition: $TRAVIS_BRANCH =~ /^release\/.*$/
+      branch: release/test
+#      all_branches: true
+#      condition: $TRAVIS_BRANCH =~ /^release\/.*$/
