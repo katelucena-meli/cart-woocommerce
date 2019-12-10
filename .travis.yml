@@ -3,7 +3,7 @@ branches:
   only:
     - /^release\/.*$/
 script:
-  - echo skiping phpunit
+  - echo BRANCH $TRAVIS_BRANCH
 before_deploy:
 - tar -cvz \
     --exclude=bin \
