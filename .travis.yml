@@ -20,7 +20,6 @@ before_deploy:
     --exclude=README.md
     --exclude=readme.txt
     -cvzf ${FINAL_NAME}.tar.gz *
-  - ls -la
 deploy:
   - provider: releases
     script: ls -la
@@ -30,7 +29,6 @@ deploy:
     skip_cleanup: true
     on:
       repo: PluginAndPartners/cart-woocommerce
-      branch: release/test
-#      all_branches: true
-#      condition: $TRAVIS_BRANCH =~ /^release\/.*$/
+      all_branches: true
+      condition: $TRAVIS_BRANCH =~ /^release\/.*$/
     draft: true
