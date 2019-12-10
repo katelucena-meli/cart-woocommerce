@@ -1,4 +1,7 @@
 language: php
+branches:
+  only:
+    - /^release\/.*$/.
 before_deploy:
 - tar -cvz \
     --exclude=bin \
@@ -22,5 +25,4 @@ deploy:
   file: "${REPO}-${$TRAVIS_BRANCH}-${TRAVIS_BUILD_NUMBER}.tar.gz"
   on:
     repo: PluginAndPartners/cart-woocommerce
-    all_branches: true
-    condition: $TRAVIS_BRANCH =~ ^release\/.*$
+    branch: /^release\/.*$/.
