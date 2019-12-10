@@ -19,7 +19,7 @@ before_deploy:
       --exclude=phpunit.xml.dist \
       --exclude=README.md \
       --exclude=readme.txt \
-      -f ${FINAL_NAME}-${TRAVIS_BUILD_NUMBER}.tar.gz \ *
+      -f ${FINAL_NAME}-${TRAVIS_BUILD_NUMBER}.tar.gz *
 deploy:
   - provider: releases
     script: ./name.sh
