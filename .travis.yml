@@ -23,7 +23,6 @@ before_deploy:
       -cvzf ${FINAL_NAME}.tar.gz *
 deploy:
   - provider: releases
-    script: ./name.sh
     draft: true
     api_key:
       secure: NpLUoY/oVCSpwSB4C0yRg+wWb6yJnCkBgX97/jW1aRfe22POkH2AybkEhvyhlxVrAvxIGC9411ag+k+Im51saM++wKRgP6i5uaFwbLlpjNp473VwweJ195WuvxgiDqwjaGbVU3NMnKxvrKgdiwLV8X3sECQqHnMR7L8TEyOanP/i9i0uTlNxeqUA5Mm+acwGas1VtHAOEw6O3PJzdXMjshqryB6DLY94wI4dki3G938GSDj1v4Wboqc8Vx4tZ2ECjECjhKejx06n5c0mPaiRNicEoDbtTjA9lcDpscn2h0adEiFlcrOJ99Cb4v6urNrHmmp96Wg3JiI4Zu//MFBabNwsWIId1Rnh9rFqrKl5ImGN/hObAVdSrPYA3stM4FpQgksqpsiTzpYlWl+DA9jNg5ubVpW27YkLrRjN5sbRiMQt/o2dPWCB5nDCSbS4fLiC9etDxen2IatjcuwTKqUjfhit3frhcSifvHk5fbiKo7pX3HPSaI4Q0UeUpPYh046GVjkmB+akRoLhANjUW8JFyMam71NL2+7KK2bNVXZB0KJN8VRGwHQ8cI331Pi5DiSZc6+gEgSvQha2ZU4cU/wX1y+A5VIFBYXJHKJ+bsjQeb8/5ynuhCnWB2PN4TLLCfDazDATEPTEWOf7Z3F+YNOucIfkeEBzBmP0PFV9boERMx4=
