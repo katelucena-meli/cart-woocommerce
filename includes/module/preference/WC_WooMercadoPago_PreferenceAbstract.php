@@ -345,7 +345,7 @@ abstract class WC_WooMercadoPago_PreferenceAbstract extends WC_Payment_Gateway
      */
     public function get_transaction_amount()
     {
-        return $this->order_total;
+        return $this->number_format_value($this->order_total);
     }
 
     /**
